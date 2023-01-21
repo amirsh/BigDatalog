@@ -14,4 +14,7 @@ with open(ur_infile) as fin, open(ur_outfile, 'w') as fout:
     for line in fin:
         if(line.startswith("#")):
             continue
-        o.writerow(line.split())
+        v = line.split()
+        if(ur_outfile.endswith("-w.csv")):
+        	v.append("1")
+        o.writerow(v)

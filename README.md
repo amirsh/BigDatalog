@@ -57,4 +57,13 @@ cp conf/spark-defaults.conf.template conf/spark-defaults.conf
 python txt_to_csv.py snap/wiki-Vote.txt wiki.csv
 python txt_to_csv.py snap/twitter_combined.txt twitter.csv
 python txt_to_csv.py snap/soc-Epinions1.txt epinions.csv
+python txt_to_csv.py snap/wiki-Vote.txt wiki-w.csv
+python txt_to_csv.py snap/twitter_combined.txt twitter-w.csv
+python txt_to_csv.py snap/soc-Epinions1.txt epinions-w.csv
+cp wiki.csv ../data/wiki/
+cp wiki-w.csv ../data/wiki/
+cp epinions.csv ../data/epinions/
+cp epinions-w.csv ../data/epinions/
+cp twitter.csv ../data/twitter/
+cp twitter-w.csv ../data/twitter/
 ```

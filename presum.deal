@@ -1,0 +1,3 @@
+database({arc(From: integer, To: integer)}).
+presum(I, B) <- I=0,B=30.
+presum(I, B) <- arc(I,V), J = I-1, presum(J,OB), B=OB+V.

@@ -1,0 +1,4 @@
+database({arc(From: integer, To: integer)}).
+ccm(X,mmin<X>) <- arc(X,_).
+ccm(Y,mmin<V>) <- ccm(X,V), arc(X,Y).
+cc(X,min<Y>) <- ccm(X,Y).

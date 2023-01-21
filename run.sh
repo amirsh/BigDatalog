@@ -1,8 +1,14 @@
 # Datasets="twitter"
+# Datasets="epinions"
 # Datasets="arc"
+# Datasets="wiki"
 Datasets="twitter epinions wiki"
-Programs="reach"
-# Programs="reach cc sssp"
+# Programs="reach"
+# Programs="cc"
+# Programs="sssp"
+Programs="reach cc sssp"
+# Datasets="vec"
+# Programs="presum"
 
 # args: prog, query, data
 function runbd ()
@@ -17,6 +23,7 @@ function qry ()
 	case "$1" in
 		"reach") Query="reach(A)."; Sfx="" ;;
 		"cc") Query="cc(X,Y)."; Sfx="" ;;
+		"presum") Query="presum(X,Y)."; Sfx="" ;;
 		"sssp") Query="sssp(X,Y)."; Sfx="-w" ;;
 		*) echo "bad program";;
 	esac
