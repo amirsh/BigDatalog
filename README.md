@@ -41,3 +41,20 @@ spark.datalog.uniondistinct.enabled|true|Deduplicate union operations.  Datalog 
 To configure the number of partitions for a recursive predicate, set spark.sql.shuffle.partitions (by default 200).  For programs without shuffling in recursion (decomposable programs) setting spark.sql.shuffle.partitions = [# of total CPU cores in the cluster] is usually a good choice.  For programs with shuffling, the value to use for spark.sql.shuffle.partitions can vary depending on the program + workload combination, but 1, 2, or 4 X [# of total CPU cores in the cluster] are good values to try.
 
 Many BigDatalog programs will perform better given more memory.  Make sure to choose a 'good' setting for spark.executor.memory and consider increasing spark.memory.fraction and spark.memory.storageFraction, especially for programs that require little-to-no shuffling.
+
+### Config file
+
+Use the following command:
+
+```
+cp conf/spark-defaults.conf.template conf/spark-defaults.conf 
+```
+
+
+### File preparations
+
+```python
+python txt_to_csv.py snap/wiki-Vote.txt wiki.csv
+python txt_to_csv.py snap/twitter_combined.txt twitter.csv
+python txt_to_csv.py snap/soc-Epinions1.txt epinions.csv
+```
